@@ -16,5 +16,6 @@ defaults:
   - # Drafts are not published
       scope:
         path: "_drafts"
+        type: "posts"
       values:
         published: false
