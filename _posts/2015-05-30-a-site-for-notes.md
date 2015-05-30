@@ -1,4 +1,5 @@
 ---
+type: posts
 ---
 # Hello!
 
