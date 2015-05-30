@@ -1,0 +1,13 @@
+defaults:
+  - # All pages are authored by me
+      scope:
+        path: ""
+        type: "pages,posts"
+      values:
+        layout: "default"
+        author: "Alex Ati"
+  - # Drafts are not published
+      scope:
+        path: "_drafts"
+      values:
+        published: false
