@@ -76,6 +76,8 @@ Great.
 
 Now, you have seen that reagent talks about "all app state in a single place". Re-frame defines a complementary rule, which is "and there is a unique sequence of events that modify that app state". The way we do this is by dispatching these events and letting subscribers react to it. For this, lets consider an event a vector of values (or any other particular data).
 
+XXX One more note: events can be either changes that happen on another part of our app structure (we will subscribe to the parts that we are interested in), or they might come from external events (our code will dispatch events appropriately) SEE YYY BELOW
+
 Whenever we would have done the following thing in reagent:
 
     (defn random-color-button []
@@ -107,7 +109,9 @@ Now we only need to tell re-frame when to execute this function.
 
 This should work, now doesnt it?
 
-## Listening to changes (necessary?? Or is this just to speed reagent???)
+## Listening to changes
+
+YYY SUBSCRIPTIONS ARE FOR COMPONENTS AND COMPONENTS ONLY. SEE XXX ABOVE
 
 You might have seen earlier that we required a Reagent macro, called Reaction. You have already used it, unknowingly, through reagent components, but we are going to star using it explicitly. There is further depth in the re-frame docs, but the main idea behind it is that it enables reagent to react to a change in a *value*. This is important: no matter how many times the inside of a reaction is updated, if it evaluates to the same value, reaction won't propagate any change outside.
 
